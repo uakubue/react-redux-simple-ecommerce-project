@@ -1,0 +1,13 @@
+.products_container{
+    height: 100vh;
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex: 1;
+}
+
+img{
+    width: 25%;
+}

@@ -1,0 +1,21 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 1em;
+}
+
+
+.cart_div{
+    position: relative;
+}
+
+.cart_value_digit{
+    position: absolute;
+    top: .2px;
+    left: 20px;
+    background-color: orange;
+    padding: 0 4px;
+    font-weight: bold;
+    border-radius: 18px;
+}
