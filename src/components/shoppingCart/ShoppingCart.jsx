@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuantity } from '../../CartSlice'; // Assuming you have action creators for increasing and decreasing item quantity
 import './ShoppingCart.css'; // Import CSS file for component-specific styles
+import { Link } from 'react-router-dom';
 
 const ShoppingCart = () => {
   const dispatch = useDispatch();
@@ -28,25 +29,33 @@ const ShoppingCart = () => {
     <div className='cart_container'>
       <div className="shopping-cart">
         <h2 className="shopping-cart-title">Shopping Cart</h2>
-        <ul className="cart-items">
-          {cartItems.map(item => (
-            <li key={item.id} className="cart-item">
-              <div>
-                <img src={item.image} alt="" />
-                <p>{item.name}</p>
-                <span>{item.name} - ${item.price}</span>
-              </div>
+        <div className='cart_cont'>
+          <div className="cart_items">
+            {cartItems.map(item => (
+              <div key={item.id} className="cart_inner_item">
+                <div>
+                  <img src={item.image} alt="" />
+                  <p>{item.name}</p>
+                  <span>{item.name} - ${item.price}</span>
+                </div>
 
-              <div className="quantity-controls">
-                <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
-                <span> {item.quantity}</span>
-                <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                <div className="quantity-controls">
+                  <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                  <span> {item.quantity}</span>
+                  <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                </div>
+                <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
               </div>
-              <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
+        </div>
         <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
+
+        <Link to="/productLists">
+          <div>
+            <button>Continue Shopping</button>
+          </div>
+        </Link>
       </div>
       <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
     </div>
