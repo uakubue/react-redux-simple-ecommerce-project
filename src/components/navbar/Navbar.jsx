@@ -1,6 +1,5 @@
 import React from 'react'
-import { MdOutlineShoppingCart } from "react-icons/md";
-
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useSelector, useStore } from "react-redux"
 
 import './Navbar.css'
@@ -27,7 +26,7 @@ const Navbar = () => {
             <Link to="/shoppingCart">
                 <div className='cart_div'>
                     <div className='cart_icon'>
-                        <MdOutlineShoppingCart size="40"/>
+                        <ShoppingCartOutlinedIcon size="60"/>
                     </div>
                     <div className='cart_value_digit'>
                         {cartItemsLength}
