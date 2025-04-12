@@ -11,3 +11,23 @@ img{
     width: 120px;
 }
 
+.total_amount{
+    font-weight: bold;
+}
+
+.amount_s{
+    font-size: 2em;
+    font-style: oblique;
+}
+
+.shopping_cart{
+    
+    background-color: azure;
+}
+
+.cart_item_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -27,24 +27,30 @@ const ShoppingCart = () => {
 
   return (
     <div className='cart_container'>
-      <div className="shopping-cart">
+      <div className="shopping_cart">
         <h2 className="shopping-cart-title">Shopping Cart</h2>
         <div className='cart_cont'>
           <div className="cart_items">
             {cartItems.map(item => (
               <div key={item.id} className="cart_inner_item">
-                <div>
-                  <img src={item.image} alt="" />
-                  <p>{item.name}</p>
-                  <span>{item.name} - ${item.price}</span>
+                <div className='cart_item_div'>
+                  <div className='img_div'>
+                    <img src={item.image} alt="" />
+                  </div>
+                  
+                  <div className='desc_div'>
+                    <p>{item.name}</p>
+                    <span>{item.name} - ${item.price}</span>
+
+                    <div className="quantity-controls">
+                      <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                      <span> {item.quantity}</span>
+                      <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                    </div>
+                    <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
+                  </div>
                 </div>
 
-                <div className="quantity-controls">
-                  <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
-                  <span> {item.quantity}</span>
-                  <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
-                </div>
-                <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
               </div>
             ))}
           </div>
@@ -57,7 +63,7 @@ const ShoppingCart = () => {
           </div>
         </Link>
       </div>
-      <div>{totalAmount ? <div>'The total amount is {totalAmount}</div> : ''}</div>
+      <div>{totalAmount ? <div className='total_amount'>The total amount is  <span className='amount_s'>${totalAmount}</span></div> : <div>The total amount is $0</div>}</div>
     </div>
   );
 };

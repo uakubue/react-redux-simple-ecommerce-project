@@ -15,7 +15,7 @@ img{
 .product_list_items{
     display: grid;
     grid-template-rows:  200px;
-    grid-template-columns: 300px 300px 300px 300px;
+    grid-template-columns: 300px 300px 300px 280px;
     gap: 40px;
 }
 
@@ -26,5 +26,7 @@ img{
     align-items: center;
     background-color: rgb(195, 201, 199);
     padding: 20px 0px;
-    
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 1em;
 }
