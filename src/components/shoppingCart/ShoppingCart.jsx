@@ -28,42 +28,57 @@ const ShoppingCart = () => {
   return (
     <section className='cart_container'>
       <div className="shopping_cart">
-        <h2 className="shopping-cart-title">Shopping Cart</h2>
+        <h2 className="shopping_cart_title">Shopping Cart</h2>
         <div className='cart_cont'>
           <div className="cart_items">
-            {cartItems.map(item => (
-              <div key={item.id} className="cart_inner_item">
-                <div className='cart_item_div'>
-                  <div className='img_div'>
-                    <img src={item.image} alt="" />
-                  </div>
-                  
-                  <div className='desc_div'>
-                    <p>{item.name}</p>
-                    <span>{item.name} - ${item.price}</span>
-
-                    <div className="quantity-controls">
-                      <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
-                      <span> {item.quantity}</span>
-                      <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+            {
+              cartItems.length !== 0 ? (
+                cartItems.map(item => (
+                  <div key={item.id} className="cart_inner_item">
+                    <div className='cart_item_div'>
+                      <div className='img_div'>
+                        <img src={item.image} alt="" />
+                      </div>
+                      
+                      <div className='desc_div'>
+                        <p>{item.name}</p>
+                        <span>{item.name} - ${item.price}</span>
+    
+                        <div className="quantity-controls">
+                          <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+                          <span> {item.quantity}</span>
+                          <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+                        </div>
+                        <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
+                      </div>
                     </div>
-                    <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
                   </div>
+                ))
+              ) : (
+                <div className='empty_cart_div'>
+                  <p>Your Shopping cart is empty</p>
                 </div>
-
-              </div>
-            ))}
+              )
+            }
           </div>
         </div>
-        <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
+        
 
-        <Link to="/productLists">
-          <div>
-            <button>Continue Shopping</button>
-          </div>
-        </Link>
+        <div className='cart_btn_div'>
+          <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
+
+          <Link to="/productLists">
+            <div>
+              <button>Continue Shopping</button>
+            </div>
+          </Link>
+        </div>
+
       </div>
-      <div>{totalAmount ? <div className='total_amount'>The total amount is  <span className='amount_s'>${totalAmount}</span></div> : <div>The total amount is $0</div>}</div>
+      
+      <div className='amount_div'>
+        {totalAmount ? <div className='total_amount'>The total amount is  <span className='amount_s'>${totalAmount}</span>
+      </div> : <div>The total amount is $0</div>}</div>
     </section>
   );
 };

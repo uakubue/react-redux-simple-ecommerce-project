@@ -6,6 +6,14 @@
 
 }
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 section{
     background: var(--general-gray-bg);
+    width: 100vw;
+    height: 100%;
 }
