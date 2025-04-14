@@ -24,9 +24,45 @@ img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(195, 201, 199);
     padding: 20px 0px;
     margin: 5px;
     border: 1px solid black;
     border-radius: 1em;
 }
+
+.product_list_title > h2{
+    font-size: 120%;
+    padding-left: .9em;
+}
+
+@media (min-width: 280px) and (max-width: 412px){
+    .products_container{
+        height: 350vh;
+        width: 99vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        flex: 1;
+    }
+
+
+    .product_list_items{
+        display: grid;
+        grid-template-rows:  200px;
+        grid-template-columns: 300px;
+        gap: 20px;
+    }
+
+    .products_box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(195, 201, 199);
+        margin: 5px;
+        border: 1px solid black;
+        border-radius: 1em;
+    }
+}
+
