@@ -26,7 +26,7 @@ const ShoppingCart = () => {
   };
 
   return (
-    <div className='cart_container'>
+    <section className='cart_container'>
       <div className="shopping_cart">
         <h2 className="shopping-cart-title">Shopping Cart</h2>
         <div className='cart_cont'>
@@ -64,7 +64,7 @@ const ShoppingCart = () => {
         </Link>
       </div>
       <div>{totalAmount ? <div className='total_amount'>The total amount is  <span className='amount_s'>${totalAmount}</span></div> : <div>The total amount is $0</div>}</div>
-    </div>
+    </section>
   );
 };
 

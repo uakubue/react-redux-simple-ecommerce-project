@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../CartSlice';
 import { useState } from 'react';
-import image1 from '../../assets/colour-flowers-white-pot-isolated-white.avif';
-import image2 from '../../assets/potted-plant-against.jpg'
+import image1 from '../../assets/Anaheim-pepper-plant.jpg';
+import image2 from '../../assets/potted-plant-against.png'
 import image3 from '../../assets/lush-green-dracaena.avif'
 import image4 from '../../assets/Alocacia-tiny-plant.jpg'
 import image5 from '../../assets/Alocasia-Frydeck-plant.jpg'
@@ -37,13 +37,17 @@ const ProductList = () => {
     const handleAddToCart = (product) => {
       setDisabledProducts(prev => [...prev, product.id]); // disable first
       dispatch(addItemToCart(product));
+
+      document.getElementById('navbar').style.display = 'block';
     };
+
+    
     
 
 
 
   return (
-    <>
+    <section>
       <div className="product_list_title">
         <h2 >Our Products</h2>
       </div>
@@ -53,7 +57,7 @@ const ProductList = () => {
         {
               products.map(product => {
                   return(
-                      <div key={product.id} className='products_box'>
+                      <div key={product.id} className='products_card'>
                           <img src={product.image} alt="product image" />
                           <div><span>{product.name} - ${product.price}</span></div>
 
@@ -70,7 +74,7 @@ const ProductList = () => {
           }
         </div>
       </div>
-    </>
+    </section>
   )
 }
 

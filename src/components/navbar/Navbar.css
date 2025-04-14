@@ -1,8 +1,28 @@
+:root{
+    --colored-bg: #8c1985;
+    --text-primary: #fff;
+}
+
+
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 1em;
+    height: 5em;
+    background: var(--colored-bg);
+    
+}
+
+.logo_div{
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.nav_cart{
+    text-decoration: none;
+    color: var(--text-primary);
+    width: 100%;
 }
 
 
@@ -12,10 +32,10 @@ nav{
 
 .cart_value_digit{
     position: absolute;
-    top: .2px;
-    left: 20px;
+    bottom: 15px;
+    left: 14px;
     background-color: orange;
-    padding: 0 4px;
+    padding: 0 3px;
     font-weight: bold;
-    border-radius: 18px;
+    border-radius: 100px;
 }

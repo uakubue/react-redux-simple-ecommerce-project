@@ -15,18 +15,17 @@ const Navbar = () => {
     console.log(cartItemsLength);
 
   return (
-    <div>
         <nav>
-            <div>
-                <Link to="/">
-                    <h2>Cholan</h2>
+            <div className='logo_div'>
+                <Link  to="/">
+                    <h2 className='logo_div'>Cholan Agro</h2>
                 </Link>
             </div>
             
             <Link to="/shoppingCart">
                 <div className='cart_div'>
                     <div className='cart_icon'>
-                        <ShoppingCartOutlinedIcon size="60"/>
+                        <ShoppingCartOutlinedIcon className='nav_cart' />
                     </div>
                     <div className='cart_value_digit'>
                         {cartItemsLength}
@@ -34,7 +33,6 @@ const Navbar = () => {
                 </div>
             </Link>
         </nav>
-    </div>
   )
 }
 

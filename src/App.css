@@ -1,0 +1,11 @@
+:root{
+    --colored-bg: #8c1985;
+    --text-primary: #fff;
+    --general-gray-bg: #f2f2f5;
+    --text-indigo: #8c1985;
+
+}
+
+section{
+    background: var(--general-gray-bg);
+}
