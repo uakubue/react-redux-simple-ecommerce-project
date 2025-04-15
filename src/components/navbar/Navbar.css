@@ -1,10 +1,17 @@
+/* @import "tailwindcss"; */
+
 :root{
     --colored-bg: #8c1985;
     --text-primary: #fff;
 }
 
 
+.nav_container{
+    position: relative;
+}
+
 nav{
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,6 +19,8 @@ nav{
     height: 5em;
     background: var(--colored-bg); 
 }
+
+
 
 .logo_div{
     text-decoration: none;
@@ -22,6 +31,10 @@ nav{
     text-decoration: none;
     color: var(--text-primary);
     width: 100%;
+}
+
+.nav_cart_icon{
+    color: var(--text-primary);
 }
 
 

@@ -1,9 +1,12 @@
 import React from 'react'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+// import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useSelector, useStore } from "react-redux"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
+
+import { MdOutlineShoppingCart } from "react-icons/md";
+
 
 const Navbar = () => {
     // Log the entire state to understand its structure
@@ -15,24 +18,27 @@ const Navbar = () => {
     console.log(cartItemsLength);
 
   return (
-        <nav>
-            <div className='logo_div'>
-                <Link  to="/">
-                    <h2 className='logo_div'>Cholan Agro</h2>
-                </Link>
-            </div>
-            
-            <Link to="/shoppingCart">
-                <div className='cart_div'>
-                    <div className='cart_icon'>
-                        <ShoppingCartOutlinedIcon className='nav_cart' />
-                    </div>
-                    <div className='cart_value_digit'>
-                        {cartItemsLength}
-                    </div>
+        <div className='nav_container'>
+            <nav className='static'>
+                <div className='logo_div'>
+                    <Link  to="/">
+                        <h2 className='logo_div text-2xl sm:text-lg xs:text-sm md:text-4xl lg:text-4xl'>Cholan Agro</h2>
+                    </Link>
                 </div>
-            </Link>
-        </nav>
+                
+                <Link to="/shoppingCart">
+                    <div className='cart_div'>
+                        <div className='cart_icon'>
+                            {/* <ShoppingCartOutlinedIcon className='nav_cart' /> */}
+                            <MdOutlineShoppingCart size="30" className='nav_cart_icon'/>
+                        </div>
+                        <div className='cart_value_digit'>
+                            {cartItemsLength}
+                        </div>
+                    </div>
+                </Link>
+            </nav>
+        </div>
   )
 }
 

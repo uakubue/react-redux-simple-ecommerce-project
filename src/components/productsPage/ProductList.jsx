@@ -49,7 +49,7 @@ const ProductList = () => {
   return (
     <section>
       <div className="product_list_title">
-        <h2 >Our Products</h2>
+        <h2 className='text-center p-9'>Our Products</h2>
       </div>
 
       <div className='products_container'>

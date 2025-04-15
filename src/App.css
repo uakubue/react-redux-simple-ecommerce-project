@@ -1,3 +1,5 @@
+/* @import "tailwindcss"; */
+
 :root{
     --colored-bg: #8c1985;
     --text-primary: #fff;
@@ -17,3 +19,4 @@ section{
     width: 100vw;
     height: 100%;
 }
+
