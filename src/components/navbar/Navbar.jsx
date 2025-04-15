@@ -1,7 +1,6 @@
 import React from 'react'
 // import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useSelector, useStore } from "react-redux"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 
@@ -29,7 +28,6 @@ const Navbar = () => {
                 <Link to="/shoppingCart">
                     <div className='cart_div'>
                         <div className='cart_icon'>
-                            {/* <ShoppingCartOutlinedIcon className='nav_cart' /> */}
                             <MdOutlineShoppingCart size="30" className='nav_cart_icon'/>
                         </div>
                         <div className='cart_value_digit'>
