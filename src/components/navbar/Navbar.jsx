@@ -4,7 +4,7 @@ import { useSelector, useStore } from "react-redux"
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 
-import { MdOutlineShoppingCart } from "react-icons/md";
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
                 <Link to="/shoppingCart">
                     <div className='cart_div'>
                         <div className='cart_icon'>
-                            <MdOutlineShoppingCart size="30" className='nav_cart_icon'/>
+                            <FaShoppingCart size="30" className='nav_cart_icon'/>
                         </div>
                         <div className='cart_value_digit'>
                             {cartItemsLength}
