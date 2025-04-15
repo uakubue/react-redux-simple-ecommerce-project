@@ -4,6 +4,7 @@
     --colored-bg: #8c1985;
     --text-primary: #fff;
     --general-gray-bg: #f2f2f5;
+    --white-bg: #ffffff;
     --text-indigo: #8c1985;
 
 }
@@ -18,5 +19,6 @@ section{
     background: var(--general-gray-bg);
     width: 100vw;
     height: 100%;
+    padding-top: 60px;
 }
 

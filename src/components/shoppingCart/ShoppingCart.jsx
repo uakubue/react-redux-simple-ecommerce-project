@@ -27,8 +27,8 @@ const ShoppingCart = () => {
 
   return (
     <section className='cart_container'>
+      
       <div className="shopping_cart">
-        <h2 className="shopping_cart_title">Shopping Cart</h2>
         <div className='cart_cont'>
           <div className="cart_items">
             {
@@ -41,15 +41,15 @@ const ShoppingCart = () => {
                       </div>
                       
                       <div className='desc_div'>
-                        <p>{item.name}</p>
-                        <span>{item.name} - ${item.price}</span>
+                        <p className='item_title'>{item.name}</p>
+                        <span>${item.price}</span>
     
                         <div className="quantity-controls">
                           <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
                           <span> {item.quantity}</span>
                           <button className="quantity-control-btn" onClick={() => handleIncreaseQuantity(item.id)}>+</button>
                         </div>
-                        <button className="remove-item-btn" onClick={() => handleRemoveItem(item.id)}>Remove</button>
+                        <button className="remove-item-btn " onClick={() => handleRemoveItem(item.id)}>Remove Item</button>
                       </div>
                     </div>
                   </div>
@@ -65,11 +65,11 @@ const ShoppingCart = () => {
         
 
         <div className='cart_btn_div'>
-          <button className="clear-cart-btn" onClick={handleClearCart}>Clear Cart</button>
+          <button className="clear-cart-btn sticky" onClick={handleClearCart}>Clear Cart</button>
 
           <Link to="/productLists">
             <div>
-              <button>Continue Shopping</button>
+              <button className='ctn_shoppin_btn'>Continue Shopping</button>
             </div>
           </Link>
         </div>

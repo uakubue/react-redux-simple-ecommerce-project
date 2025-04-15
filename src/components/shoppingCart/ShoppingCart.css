@@ -1,10 +1,23 @@
 .cart_container{
     width: 99.7vw;
-    height: 99vh;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 3em;
+    padding-top: 11em;
+    
+}
+
+.cart_inner_item{
+    position: relative
+}
+
+.cart_item_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     
 }
 
@@ -18,7 +31,8 @@
 
 .shopping_cart{
     width: 50%;
-     background-color: beige;
+    height: auto;
+     background-color: var(--white-bg);
      display: flex;
      flex-direction: column;
 }
@@ -37,12 +51,7 @@ img{
 }
 
 
-.cart_item_div{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
+
 
 .shopping_cart_title{
     font-size: 150%;
@@ -58,6 +67,27 @@ img{
     justify-content: center;
 }
 
+.clear-cart-btn{
+    color: var(--text-indigo);
+}
+
+.ctn_shoppin_btn{
+    color: var(--text-indigo);
+}
+
+
+.item_title{
+    color: var(--text-indigo);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.remove-item-btn{
+    color: var(--text-primary);
+    background: red;
+    padding: 4px 2em;
+    margin-top: 2em;
+}
 
 
 
@@ -69,6 +99,7 @@ img{
         flex-direction: column;
         justify-content: space-around;
         padding: 1em;
+        padding-top: auto;
         
     }
 
@@ -76,6 +107,7 @@ img{
         font-size: 150%;
         text-align: center;
         padding-bottom: 30px;
+        color: var(--text-indigo);
     }
 
     .cart_btn_div{
