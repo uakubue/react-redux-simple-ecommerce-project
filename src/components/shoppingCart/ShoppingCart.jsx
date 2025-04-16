@@ -4,6 +4,9 @@ import { removeItemFromCart, clearCart, increaseItemQuantity, decreaseItemQuanti
 import './ShoppingCart.css'; // Import CSS file for component-specific styles
 import { Link } from 'react-router-dom';
 
+import { FaNairaSign } from "react-icons/fa6";
+
+
 const ShoppingCart = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector(state => state.cart.cartItems);
@@ -42,7 +45,7 @@ const ShoppingCart = () => {
                       
                       <div className='desc_div'>
                         <p className='item_title'>{item.name}</p>
-                        <span>${item.price}</span>
+                        <span><FaNairaSign />{item.price}</span>
     
                         <div className="quantity-controls">
                           <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
@@ -77,8 +80,8 @@ const ShoppingCart = () => {
       </div>
       
       <div className='amount_div'>
-        {totalAmount ? <div className='total_amount'>The total amount is  <span className='amount_s'>${totalAmount}</span>
-      </div> : <div>The total amount is $0</div>}</div>
+        {totalAmount ? <div className='total_amount'>The total amount is  <span className='amount_s'><FaNairaSign />{totalAmount.toFixed(2)}</span>
+      </div> : <div>The total amount is <FaNairaSign />0</div>}</div>
     </section>
   );
 };
