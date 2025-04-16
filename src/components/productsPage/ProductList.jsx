@@ -12,6 +12,8 @@ import image8 from '../../assets/Snake-plant.jpg'
 import image9 from '../../assets/Anaheim-pepper-plant.jpg'
 
 import { FaNairaSign } from "react-icons/fa6";
+import { TiTick } from "react-icons/ti";
+
 
 
 import React from 'react'
@@ -77,8 +79,8 @@ const ProductList = () => {
                                 className={`add_to_cart_btn ${disabledProducts.includes(product.id) ? 'disabled' : ''}`}
                                 onClick={() => handleAddToCart(product)}
                                 disabled={disabledProducts.includes(product.id)}
-                                >
-                                Add to Cart
+                            >
+                                {disabledProducts.includes(product.id) ? <span>Added to Cart</span> : 'Add to Cart'}
                             </button>
                         </div>
                     )
