@@ -30,7 +30,6 @@ const ShoppingCart = () => {
 
   return (
     <section className='cart_container'>
-      
       <div className="shopping_cart">
         <div className='cart_cont'>
           <div className="cart_items">
@@ -40,12 +39,12 @@ const ShoppingCart = () => {
                   <div key={item.id} className="cart_inner_item">
                     <div className='cart_item_div'>
                       <div className='img_div'>
-                        <img src={item.image} alt="" />
+                        <img src={item.images} alt={item.title}/>
                       </div>
                       
                       <div className='desc_div'>
                         <p className='item_title'>{item.name}</p>
-                        <span><FaNairaSign />{item.price}</span>
+                        <span className='amount_list'><FaNairaSign /><span>{item.price.toFixed(2)}</span></span>
     
                         <div className="quantity-controls">
                           <button className="quantity-control-btn" onClick={() => handleDecreaseQuantity(item.id)}>-</button>
@@ -80,8 +79,17 @@ const ShoppingCart = () => {
       </div>
       
       <div className='amount_div'>
-        {totalAmount ? <div className='total_amount'>The total amount is  <span className='amount_s'><FaNairaSign />{totalAmount.toFixed(2)}</span>
-      </div> : <div>The total amount is <FaNairaSign />0</div>}</div>
+        {totalAmount ? 
+          <div className='total_amount'>The total amount is  
+            <span className='amount_s'><FaNairaSign /><span>{totalAmount.toFixed(2)}</span></span>
+          </div> : 
+          <div>The total amount is <FaNairaSign />0</div>
+        }
+        <div>
+          <button className='checkout_btn'>Checkout {totalAmount.toFixed(2)}</button>
+        </div>
+      </div>
+
     </section>
   );
 };
