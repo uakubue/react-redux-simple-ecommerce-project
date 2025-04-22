@@ -21,7 +21,7 @@ const Navbar = () => {
             <nav className='static'>
                 <div className='logo_div'>
                     <Link  to="/">
-                        <h2 className='logo_div text-2xl sm:text-lg xs:text-sm md:text-4xl lg:text-4xl'>Cholan Agro</h2>
+                        <h2 className='logo_div text-2xl sm:text-lg xs:text-sm md:text-4xl lg:text-4xl'>Cholan Store</h2>
                     </Link>
                 </div>
                 
