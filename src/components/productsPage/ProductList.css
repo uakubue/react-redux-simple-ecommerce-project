@@ -18,7 +18,7 @@
     grid-template-rows:  300px 300px 300px;
     grid-template-columns: 280px 280px 280px 280px;
     column-gap: 60px;
-    row-gap: 10px;
+    row-gap: 2em;
     margin-top: 4em;
 }
 
