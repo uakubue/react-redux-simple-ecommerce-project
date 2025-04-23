@@ -1,14 +1,14 @@
-/* *{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  body{
+  /* body{
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-  }
+  } */
   
   header {
     position: fixed;
@@ -18,7 +18,8 @@
     top: .5rem;
     text-align: center;
     color: #222;
-  } */
+    
+  }
   header .social li {
     margin-top: 20px;
     list-style: none;

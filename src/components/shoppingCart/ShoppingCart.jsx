@@ -39,11 +39,11 @@ const ShoppingCart = () => {
                   <div key={item.id} className="cart_inner_item">
                     <div className='cart_item_div'>
                       <div className='img_div'>
-                        <img src={item.images} alt={item.title}/>
+                        <img src={item.image} alt={item.title}/>
                       </div>
                       
                       <div className='desc_div'>
-                        <p className='item_title'>{item.name}</p>
+                        <p className='item_title'>{item.title}</p>
                         <span className='amount_list'><FaNairaSign /><span>{item.price.toFixed(2)}</span></span>
     
                         <div className="quantity-controls">

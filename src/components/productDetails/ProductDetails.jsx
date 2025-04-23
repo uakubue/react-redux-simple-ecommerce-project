@@ -10,7 +10,7 @@ const ProductDetails = () => {
     // Fetch product details using the ID
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`); // Replace with your API endpoint
+        const response = await fetch(`https://fakestoreapi.com/products/${id}`); // Replace with your API endpoint
         const data = await response.json();
         setProduct(data); // Set the product details in state
       } catch (error) {
@@ -27,7 +27,7 @@ const ProductDetails = () => {
         <div>
             <h3>{product.title}</h3>
             <div>
-                <img src={product.images} alt="" />
+                <img src={product.image} alt="" />
             </div>
             <p>Price: {product.price}</p>
             <p>{product.description}</p>

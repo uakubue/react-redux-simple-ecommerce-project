@@ -17,7 +17,7 @@ const ProductList = () => {
 
   const fetchProducts = async () => {
 
-    const BASE_URL = "https://api.escuelajs.co/api/v1/products"
+    const BASE_URL = "https://fakestoreapi.com/products"
     const response = await fetch(BASE_URL); // 
     if (!response.ok) {
       throw new Error('Network response was not ok');
@@ -25,7 +25,7 @@ const ProductList = () => {
     return response.json();
   };
 
-  const { data: products = [], isLoading, error } = useQuery({
+  const { data: products = [], isFetched, isLoading, error } = useQuery({
     queryKey: ['products'], 
     queryFn:  fetchProducts,
   });
@@ -37,6 +37,7 @@ const ProductList = () => {
   };
 
   if (isLoading) return <LoaderPage /> // Handle loading state
+  if (products.length === 0) return <LoaderPage />
   if (error) return <div>Error fetching products: {error.message}</div>;
 
   return (
@@ -49,11 +50,11 @@ const ProductList = () => {
         <div className='products_container'>
           <div className="product_list_items">
           {
-                products.slice(0, 20).map(product => {
+                products.slice(0, 18).map(product => {
                     return(
                         <div key={product.id} className='products_card'>
                             <Link to={`/productLists/${product.id}`}>
-                              <img src={product.images} className='product_image' alt={product.title} />
+                              <img src={product.image} className='product_image' alt={product.title} />
                             </Link>
                             <div className='name_price_div'>
                               <div className='name_div'>
