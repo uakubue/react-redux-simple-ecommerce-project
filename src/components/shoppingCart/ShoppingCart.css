@@ -13,7 +13,6 @@
 .shopping_cart{
     width: 50%;
     height: auto;
-     background-color: var(--white-bg);
      display: flex;
      flex-direction: column;
      flex: .7;
@@ -43,7 +42,9 @@
 }
 
 .cart_inner_item{
-    position: relative
+    position: relative;
+    background-color: var(--white-bg);
+
 }
 
 .cart_item_div{
@@ -51,7 +52,18 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    
+    flex: 1;
+    margin-bottom: 1em;
+    padding: 1em;
+
+}
+
+.img_div{
+    flex: .3;
+}
+
+.desc_div{
+    flex: .7;
 }
 
 .cart_btn_div{
@@ -65,7 +77,7 @@
 
 
 img{
-    width: 220px;
+    width: 150px;
 }
 
 .total_amount{
