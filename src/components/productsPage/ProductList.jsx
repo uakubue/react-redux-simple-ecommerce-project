@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../CartSlice';
 import { useState } from 'react';
-import LoaderPage from '../loadPage/LoaderPage';
+import LoaderPage from '../loadPage/loaderPage/LoaderPage';
 import { FaNairaSign } from "react-icons/fa6";
 import React from 'react'
 import "./ProductList.css"

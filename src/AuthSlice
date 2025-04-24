@@ -1,0 +1,96 @@
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
+import { BASE_URL } from "../../config/env";
+// import { getAndDecryptToken } from "../../utils/Auth/getToken";
+
+const initialState = {
+  loginKey: null,
+  token: null,
+  isAuthenticated: false,
+  user: null,
+  loading: false,
+  error: null,
+  status: "idle",
+};
+
+// export const getLoginKey = createAsyncThunk(
+//   "auth/loginKey",
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const { data } = await axios.post(`${BASE_URL}/auth-service/auth`);
+//       console.log(data);
+//       if (data.token) {
+//         localStorage.setItem("token", data.token);
+//         localStorage.setItem("encryptedToken", data.token);
+
+//         const decryptedToken = await getAndDecryptToken(data.token);
+//         localStorage.setItem("decryptedToken", decryptedToken);
+//       }
+//       return data.token;
+//     } catch (err) {
+//       return rejectWithValue(err.response ? err.response.data : err.message);
+//     }
+//   }
+// );
+
+const authSlice = createSlice({
+  name: "auth",
+  initialState,
+  reducers: {
+    loginRequest: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    loginSuccess: (state, action) => {
+      state.token = action.payload.token;
+      state.isAuthenticated = true;
+      state.user = action.payload.user;
+      state.loading = false;
+      localStorage.setItem("token", action.payload.token);
+    },
+    loginFailure: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.error;
+    },
+    logout: (state) => {
+      state.token = null;
+      // state.isAuthenticated = false;
+      state.user = null;
+      state.loading = false;
+      localStorage.removeItem("token");
+    },
+    loadToken: (state) => {
+      const token = localStorage.getItem("token");
+      const username = localStorage.getItem("username");
+      state.loading = false;
+      if (token && username) {
+        state.token = token;
+        state.user = { username };
+        state.isAuthenticated = true;
+      } else {
+        state.isAuthenticated = false;
+      }
+    },
+  },
+  extraReducers: (builder) => {
+    // builder
+    //   .addCase(getLoginKey.pending, (state) => {
+    //     state.status = "loading";
+    //     state.error = null;
+    //   })
+    //   .addCase(getLoginKey.fulfilled, (state, action) => {
+    //     state.status = "succeeded";
+    //     state.loginKey = action.payload;
+    //     state.token = action.payload;
+    //   })
+    //   .addCase(getLoginKey.rejected, (state, action) => {
+    //     state.status = "failed";
+    //     state.error = action.payload;
+    //   });
+  },
+});
+
+export const { loginRequest, loginSuccess, loginFailure, logout, loadToken } =
+  authSlice.actions;
+
+export default authSlice.reducer;
