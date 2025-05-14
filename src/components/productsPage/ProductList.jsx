@@ -7,8 +7,8 @@ import React from 'react'
 import "./ProductList.css"
 import { useQuery } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
-
-
+import CarouselComponent from '../carousel/CarouselComponent';
+import Footer from '../footer/Footer';
 
 
 const ProductList = () => {
@@ -43,9 +43,11 @@ const ProductList = () => {
   return (
     <section>
       <div className='products_main_sec'>
-        <div className="product_list_title">
+        {/* <div className="product_list_title">
           <h2 className='text-center font-bold uppercase'>Our Products</h2>
-        </div>
+        </div> */}
+
+        <CarouselComponent />
 
         <div className='products_container'>
           <div className="product_list_items">
@@ -80,6 +82,7 @@ const ProductList = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </section>
   )
 }
